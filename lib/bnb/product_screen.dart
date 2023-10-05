@@ -9,7 +9,7 @@ class ProductScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ProductScreen'),
       ),
-      body: Center(),
+      body: const Center(),
     );
   }
 }

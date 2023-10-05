@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
 class RootScreen extends StatelessWidget {

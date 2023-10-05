@@ -13,60 +13,65 @@
 part of 'app_router.dart';
 
 class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+  _$AppRouter({
+    GlobalKey<NavigatorState>? navigatorKey,
+    required this.authGuard,
+  }) : super(navigatorKey);
+
+  final AuthGuard authGuard;
 
   @override
   final Map<String, PageFactory> pagesMap = {
     RootRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const RootScreen(),
       );
     },
-    OneRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+    AuthRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const OneScreen(),
+        child: const AuthScreen(),
       );
     },
-    SecondRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+    LoginRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const SecondScreen(),
+        child: const LoginScreen(),
       );
     },
     HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const HomeScreen(),
       );
     },
     ProductRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const ProductScreen(),
       );
     },
     FlowWrapperRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(child: const FlowWrapperScreen()),
       );
     },
     FlowOneRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const FlowOneScreen(),
       );
     },
     FlowSecondRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const FlowSecondScreen(),
       );
     },
     FlowThirdRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const FlowThirdScreen(),
       );
@@ -114,12 +119,13 @@ class _$AppRouter extends RootStackRouter {
           ],
         ),
         RouteConfig(
-          OneRoute.name,
-          path: '/one-screen',
+          AuthRoute.name,
+          path: '/auth-screen',
+          guards: [authGuard],
         ),
         RouteConfig(
-          SecondRoute.name,
-          path: '/second-screen',
+          LoginRoute.name,
+          path: '/login-screen',
         ),
       ];
 }
@@ -138,27 +144,27 @@ class RootRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [OneScreen]
-class OneRoute extends PageRouteInfo<void> {
-  const OneRoute()
+/// [AuthScreen]
+class AuthRoute extends PageRouteInfo<void> {
+  const AuthRoute()
       : super(
-          OneRoute.name,
-          path: '/one-screen',
+          AuthRoute.name,
+          path: '/auth-screen',
         );
 
-  static const String name = 'OneRoute';
+  static const String name = 'AuthRoute';
 }
 
 /// generated route for
-/// [SecondScreen]
-class SecondRoute extends PageRouteInfo<void> {
-  const SecondRoute()
+/// [LoginScreen]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute()
       : super(
-          SecondRoute.name,
-          path: '/second-screen',
+          LoginRoute.name,
+          path: '/login-screen',
         );
 
-  static const String name = 'SecondRoute';
+  static const String name = 'LoginRoute';
 }
 
 /// generated route for
