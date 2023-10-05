@@ -7,8 +7,6 @@ import 'package:mitap_migration_autoroute/flow/flow_routes.dart';
 import 'package:mitap_migration_autoroute/flow/flow_second_screen.dart';
 import 'package:mitap_migration_autoroute/flow/flow_third_screen.dart';
 import 'package:mitap_migration_autoroute/flow/flow_wrapper_screen.dart';
-import 'package:mitap_migration_autoroute/screens/auth_screen.dart';
-import 'package:mitap_migration_autoroute/screens/login_screen.dart';
 import 'package:mitap_migration_autoroute/screens/root_screen.dart';
 
 part 'app_router.gr.dart';
