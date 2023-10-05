@@ -13,12 +13,7 @@
 part of 'app_router.dart';
 
 class _$AppRouter extends RootStackRouter {
-  _$AppRouter({
-    GlobalKey<NavigatorState>? navigatorKey,
-    required this.authGuard,
-  }) : super(navigatorKey);
-
-  final AuthGuard authGuard;
+  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
 
   @override
   final Map<String, PageFactory> pagesMap = {
@@ -26,18 +21,6 @@ class _$AppRouter extends RootStackRouter {
       return AdaptivePage<dynamic>(
         routeData: routeData,
         child: const RootScreen(),
-      );
-    },
-    AuthRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const AuthScreen(),
-      );
-    },
-    LoginRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const LoginScreen(),
       );
     },
     HomeRoute.name: (routeData) {
@@ -117,16 +100,7 @@ class _$AppRouter extends RootStackRouter {
               ],
             ),
           ],
-        ),
-        RouteConfig(
-          AuthRoute.name,
-          path: '/auth-screen',
-          guards: [authGuard],
-        ),
-        RouteConfig(
-          LoginRoute.name,
-          path: '/login-screen',
-        ),
+        )
       ];
 }
 
@@ -141,30 +115,6 @@ class RootRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'RootRoute';
-}
-
-/// generated route for
-/// [AuthScreen]
-class AuthRoute extends PageRouteInfo<void> {
-  const AuthRoute()
-      : super(
-          AuthRoute.name,
-          path: '/auth-screen',
-        );
-
-  static const String name = 'AuthRoute';
-}
-
-/// generated route for
-/// [LoginScreen]
-class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute()
-      : super(
-          LoginRoute.name,
-          path: '/login-screen',
-        );
-
-  static const String name = 'LoginRoute';
 }
 
 /// generated route for

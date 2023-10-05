@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
-final _appRouter = AppRouter(authGuard: AuthGuard());
-bool isAuth = false;
+final _appRouter = AppRouter();
 
 void main() {
   runApp(const MyApp());

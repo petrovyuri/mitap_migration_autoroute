@@ -7,7 +7,6 @@ import 'package:mitap_migration_autoroute/flow/flow_routes.dart';
 import 'package:mitap_migration_autoroute/flow/flow_second_screen.dart';
 import 'package:mitap_migration_autoroute/flow/flow_third_screen.dart';
 import 'package:mitap_migration_autoroute/flow/flow_wrapper_screen.dart';
-import 'package:mitap_migration_autoroute/main.dart';
 import 'package:mitap_migration_autoroute/screens/auth_screen.dart';
 import 'package:mitap_migration_autoroute/screens/login_screen.dart';
 import 'package:mitap_migration_autoroute/screens/root_screen.dart';
@@ -27,21 +26,6 @@ part 'app_router.gr.dart';
         FlowRoute.routers,
       ],
     ),
-    AutoRoute(page: AuthScreen, guards: [AuthGuard]),
-    AutoRoute(page: LoginScreen),
   ],
 )
-class AppRouter extends _$AppRouter {
-  AppRouter({required super.authGuard});
-}
-
-class AuthGuard extends AutoRouteGuard {
-  @override
-  void onNavigation(NavigationResolver resolver, StackRouter router) {
-    if (isAuth) {
-      resolver.next(true);
-    } else {
-      router.push(const LoginRoute());
-    }
-  }
-}
+class AppRouter extends _$AppRouter {}
