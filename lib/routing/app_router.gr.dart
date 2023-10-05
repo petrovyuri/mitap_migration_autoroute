@@ -1,194 +1,131 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 part of 'app_router.dart';
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter({
-    GlobalKey<NavigatorState>? navigatorKey,
-    required this.authGuard,
-  }) : super(navigatorKey);
-
-  final AuthGuard authGuard;
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    RootRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const RootScreen(),
-      );
-    },
     AuthRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const AuthScreen(),
       );
     },
-    LoginRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const LoginScreen(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const HomeScreen(),
-      );
-    },
-    ProductRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const ProductScreen(),
-      );
-    },
-    FlowWrapperRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const FlowWrapperScreen()),
-      );
-    },
     FlowOneRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const FlowOneScreen(),
       );
     },
     FlowSecondRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const FlowSecondScreen(),
       );
     },
     FlowThirdRoute.name: (routeData) {
-      return AdaptivePage<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const FlowThirdScreen(),
       );
     },
+    FlowWrapperRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const FlowWrapperScreen()),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeScreen(),
+      );
+    },
+    LoginRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LoginScreen(),
+      );
+    },
+    ProductRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProductScreen(),
+      );
+    },
+    RootRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const RootScreen(),
+      );
+    },
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          RootRoute.name,
-          path: '/',
-          children: [
-            RouteConfig(
-              HomeRoute.name,
-              path: 'home-screen',
-              parent: RootRoute.name,
-            ),
-            RouteConfig(
-              ProductRoute.name,
-              path: 'product-screen',
-              parent: RootRoute.name,
-            ),
-            RouteConfig(
-              FlowWrapperRoute.name,
-              path: 'flow-wrapper-screen',
-              parent: RootRoute.name,
-              children: [
-                RouteConfig(
-                  FlowOneRoute.name,
-                  path: '',
-                  parent: FlowWrapperRoute.name,
-                ),
-                RouteConfig(
-                  FlowSecondRoute.name,
-                  path: 'flow-second-screen',
-                  parent: FlowWrapperRoute.name,
-                ),
-                RouteConfig(
-                  FlowThirdRoute.name,
-                  path: 'flow-third-screen',
-                  parent: FlowWrapperRoute.name,
-                ),
-              ],
-            ),
-          ],
-        ),
-        RouteConfig(
-          AuthRoute.name,
-          path: '/auth-screen',
-          guards: [authGuard],
-        ),
-        RouteConfig(
-          LoginRoute.name,
-          path: '/login-screen',
-        ),
-      ];
-}
-
-/// generated route for
-/// [RootScreen]
-class RootRoute extends PageRouteInfo<void> {
-  const RootRoute({List<PageRouteInfo>? children})
-      : super(
-          RootRoute.name,
-          path: '/',
-          initialChildren: children,
-        );
-
-  static const String name = 'RootRoute';
 }
 
 /// generated route for
 /// [AuthScreen]
 class AuthRoute extends PageRouteInfo<void> {
-  const AuthRoute()
+  const AuthRoute({List<PageRouteInfo>? children})
       : super(
           AuthRoute.name,
-          path: '/auth-screen',
+          initialChildren: children,
         );
 
   static const String name = 'AuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [LoginScreen]
-class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute()
+/// [FlowOneScreen]
+class FlowOneRoute extends PageRouteInfo<void> {
+  const FlowOneRoute({List<PageRouteInfo>? children})
       : super(
-          LoginRoute.name,
-          path: '/login-screen',
+          FlowOneRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'LoginRoute';
+  static const String name = 'FlowOneRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute()
+/// [FlowSecondScreen]
+class FlowSecondRoute extends PageRouteInfo<void> {
+  const FlowSecondRoute({List<PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
-          path: 'home-screen',
+          FlowSecondRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'FlowSecondRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [ProductScreen]
-class ProductRoute extends PageRouteInfo<void> {
-  const ProductRoute()
+/// [FlowThirdScreen]
+class FlowThirdRoute extends PageRouteInfo<void> {
+  const FlowThirdRoute({List<PageRouteInfo>? children})
       : super(
-          ProductRoute.name,
-          path: 'product-screen',
+          FlowThirdRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'ProductRoute';
+  static const String name = 'FlowThirdRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -197,45 +134,66 @@ class FlowWrapperRoute extends PageRouteInfo<void> {
   const FlowWrapperRoute({List<PageRouteInfo>? children})
       : super(
           FlowWrapperRoute.name,
-          path: 'flow-wrapper-screen',
           initialChildren: children,
         );
 
   static const String name = 'FlowWrapperRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [FlowOneScreen]
-class FlowOneRoute extends PageRouteInfo<void> {
-  const FlowOneRoute()
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
-          FlowOneRoute.name,
-          path: '',
+          HomeRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'FlowOneRoute';
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [FlowSecondScreen]
-class FlowSecondRoute extends PageRouteInfo<void> {
-  const FlowSecondRoute()
+/// [LoginScreen]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute({List<PageRouteInfo>? children})
       : super(
-          FlowSecondRoute.name,
-          path: 'flow-second-screen',
+          LoginRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'FlowSecondRoute';
+  static const String name = 'LoginRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [FlowThirdScreen]
-class FlowThirdRoute extends PageRouteInfo<void> {
-  const FlowThirdRoute()
+/// [ProductScreen]
+class ProductRoute extends PageRouteInfo<void> {
+  const ProductRoute({List<PageRouteInfo>? children})
       : super(
-          FlowThirdRoute.name,
-          path: 'flow-third-screen',
+          ProductRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'FlowThirdRoute';
+  static const String name = 'ProductRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [RootScreen]
+class RootRoute extends PageRouteInfo<void> {
+  const RootRoute({List<PageRouteInfo>? children})
+      : super(
+          RootRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'RootRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

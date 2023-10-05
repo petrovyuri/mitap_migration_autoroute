@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mitap_migration_autoroute/bnb/home_screen.dart';
 import 'package:mitap_migration_autoroute/bnb/product_screen.dart';
 import 'package:mitap_migration_autoroute/flow/flow_one_screen.dart';
@@ -14,25 +13,24 @@ import 'package:mitap_migration_autoroute/screens/root_screen.dart';
 
 part 'app_router.gr.dart';
 
-@AdaptiveAutoRouter(
+@AutoRouterConfig(
   replaceInRouteName: 'Screen,Route',
-  routes: <AutoRoute>[
-    AutoRoute(
-      path: '/',
-      initial: true,
-      page: RootScreen,
-      children: [
-        AutoRoute(page: HomeScreen),
-        AutoRoute(page: ProductScreen),
-        FlowRoute.routers,
-      ],
-    ),
-    AutoRoute(page: AuthScreen, guards: [AuthGuard]),
-    AutoRoute(page: LoginScreen),
-  ],
 )
 class AppRouter extends _$AppRouter {
-  AppRouter({required super.authGuard});
+  @override
+  RouteType get defaultRouteType => const RouteType.adaptive();
+  @override
+  final List<AutoRoute> routes = [
+    AutoRoute(path: '/', page: RootRoute.page, children: [
+      AutoRoute(
+        page: HomeRoute.page,
+      ),
+      AutoRoute(page: ProductRoute.page),
+      FlowRoute.routers
+    ]),
+    AutoRoute(page: AuthRoute.page, guards: [AuthGuard()]),
+    AutoRoute(page: LoginRoute.page),
+  ];
 }
 
 class AuthGuard extends AutoRouteGuard {
@@ -41,7 +39,11 @@ class AuthGuard extends AutoRouteGuard {
     if (isAuth) {
       resolver.next(true);
     } else {
-      router.push(const LoginRoute());
+      resolver.redirect(const LoginRoute());
     }
   }
+}
+
+class EmptyRouterPage extends AutoRouter {
+  const EmptyRouterPage({super.key});
 }

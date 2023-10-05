@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mitap_migration_autoroute/bloc/test_cubit.dart';
 import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
+@RoutePage()
 class FlowOneScreen extends StatelessWidget {
   const FlowOneScreen({super.key});
 

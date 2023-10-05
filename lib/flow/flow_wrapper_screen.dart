@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/empty_router_widgets.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mitap_migration_autoroute/bloc/test_cubit.dart';
+import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
-class FlowWrapperScreen extends StatelessWidget with AutoRouteWrapper {
+@RoutePage()
+class FlowWrapperScreen extends StatelessWidget implements AutoRouteWrapper {
   const FlowWrapperScreen({super.key});
 
   @override

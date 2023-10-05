@@ -1,19 +1,16 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:mitap_migration_autoroute/flow/flow_one_screen.dart';
-import 'package:mitap_migration_autoroute/flow/flow_second_screen.dart';
-import 'package:mitap_migration_autoroute/flow/flow_third_screen.dart';
-import 'package:mitap_migration_autoroute/flow/flow_wrapper_screen.dart';
+import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
 class FlowRoute {
-  static const routers = AutoRoute(
-    page: FlowWrapperScreen,
+  static final routers = AutoRoute(
+    page: FlowWrapperRoute.page,
     children: [
       AutoRoute(
-        page: FlowOneScreen,
+        page: FlowOneRoute.page,
         initial: true,
       ),
-      AutoRoute(page: FlowSecondScreen),
-      AutoRoute(page: FlowThirdScreen),
+      AutoRoute(page: FlowSecondRoute.page),
+      AutoRoute(page: FlowThirdRoute.page),
     ],
   );
 }

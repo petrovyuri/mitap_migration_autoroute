@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
+@RoutePage()
 class RootScreen extends StatelessWidget {
   const RootScreen({super.key});
 
@@ -13,7 +14,7 @@ class RootScreen extends StatelessWidget {
         ProductRoute(),
         FlowWrapperRoute(),
       ],
-      builder: (context, child, animation) {
+      builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
             body: child,

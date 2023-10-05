@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mitap_migration_autoroute/main.dart';
 import 'package:mitap_migration_autoroute/routing/app_router.dart';
 
+@RoutePage()
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
